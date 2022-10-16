@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Gothic&family=Poppins&display=swap');
+
+body {
+    background-color:  #fff8e1;
+    font-family: 'Do Hyeon', 'Nanum Gothic', 'Poppins';
+    font-size: 2rem;
+    margin:0;
+    
+}
+
+#inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+#inputBox1 {
+    margin: 3px;
+    width: 20rem;
+    padding: 3px;
+}
+
+#inputBox2 {
+    width: 12rem;
+    margin: 3px;
+    padding: 3px;
+}
+
+#inputBtn {
+    padding: 0px 20px;
+    background-color:#efc47b ;
+    border-radius: 10px;
+}
+
+#copyBtn {
+    padding: 0px 10px;
+    margin: 0px 5px;
+    background-color: rgb(21, 21, 21);
+    border-radius: 10px;
+    color: white;
+}
+
+#dumb { 
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    padding: 15px 10px;
+    background-color: #efc47b;
+}
+
+.addedDiv {
+    display: block;
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.addedDiv:hover {
+    color: #f0b859;
+}
