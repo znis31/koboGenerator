@@ -19,6 +19,7 @@ const affixList = [
 //html에서 input 가져옴
 const numBox = document.getElementById("inputBox1");
 const lengthBox = document.getElementById('inputBox2');
+const rateBox = document.getElementById('inputBox3');
 const inputBtn = document.getElementById("inputBtn");
 let outputDivs = document.querySelectorAll(".addedDiv");
 
@@ -30,7 +31,7 @@ inputBtn.onclick = function(){
     const wordLeng = lengthBox.innerText;
     //단어 생성및 div 추가
     for (var i = 0; i < wordNums; i++) {
-        addDiv(makeWord(getRand(0,1),getRand(1, Number.isInteger(parseInt(wordLeng)) ? wordLeng : 5),getRand(0,1)));
+        addDiv(randMani(makeWord(getRand(0,1),getRand(1, Number.isInteger(parseInt(wordLeng)) ? wordLeng : 5),getRand(0,1)), parseInt(rateBox.innerText)));
     }
     outputDivs = document.querySelectorAll(".addedDiv");
     //클릭시 복사
@@ -88,4 +89,72 @@ function removeDiv() {
     }
 };
 
+//한글 랜덤화 함수
+function randMani(text, changeRate) {
+    const dis = Hangul.d(text);
+    
+    for (let i = 0; i < dis.length; i++) {
+        if (getRand(0, changeRate >= 1 ? changeRate : 50 ) == 1) { //확률에 따라
+            if (Hangul.isConsonant(dis[i]) || Hangul.isVowel(dis[i])) { //한글이면
+                    if (!isJongsung(dis[i-1],dis[i+1])) { //종성이 아니면
+                        switch (dis[i]) { //글자를 바꾼다
+                            case 'ㄲ':
+                            case 'ㅋ':
+                                dis[i] = 'ㄱ'
+                                break;
+                            case 'ㄱ':
+                                dis[i] = 'ㄲ'
+                                break;
+                            case 'ㅂ':
+                                dis[i] = "ㅃ"
+                                break;
+                            case 'ㅌ':
+                                dis[i] = 'ㄷ'
+                                break;
+                            case 'ㄷ':
+                                dis[i] = 'ㄸ'
+                                break;
+                            case 'ㅅ':
+                                dis[i] = 'ㅆ'
+                                break;
+                            case 'ㅗ':
+                                dis[i] = 'ㅜ'
+                                break;
+                            case 'ㅐ':
+                                dis[i] = 'ㅔ'
+                                break;
+                            case 'ㅔ':
+                                dis[i] = 'ㅐ'
+                                break;
+                            case 'ㅙ':
+                                dis[i] = 'ㅚ'
+                                break;
+                            case 'ㅆ':
+                                dis[i] = 'ㅅ'
+                                break;
+                            case 'ㅜ':
+                                dis[i] = 'ㅗ'
+                                break;
+                            case 'ㅣ':
+                                dis[i] = 'ㅐ'
+                                break; 
+                            case 'ㅈ':
+                                dis[i] = 'ㅉ'
+                                break;
+                    }
+                }
+            }
+        }
+    }
+    return Hangul.a(dis);
+}
 
+//종성 찾기
+function isJongsung(a,c) {
+    // 모음 - (종성) - 자음
+    if (Hangul.isVowel(a) && Hangul.isConsonant(c)) {
+        return true;
+    } else {
+        return false;
+    }
+}

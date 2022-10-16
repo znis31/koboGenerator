@@ -8,7 +8,7 @@ body {
     
 }
 
-#inputs {
+.inputs {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,6 +25,16 @@ body {
     width: 12rem;
     margin: 3px;
     padding: 3px;
+    text-align: center;
+}
+
+#inputBox3 {
+    width: 12rem;
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+    font-family : 'Nanum Gothic';
+    font-size: 20px;
 }
 
 #inputBtn {
