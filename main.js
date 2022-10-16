@@ -76,6 +76,7 @@ function addDiv(content, id) {
     const p = document.createElement("div");
     p.innerHTML = content;
     p.setAttribute('class', 'addedDiv');
+    p.setAttribute('title', '클릭해서 복사');
     document.getElementById("pp").appendChild(p);
 };
 
