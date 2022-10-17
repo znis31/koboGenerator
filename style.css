@@ -19,6 +19,7 @@ body {
     margin: 3px;
     width: 20rem;
     padding: 3px;
+    text-align: center;
 }
 
 #inputBox2 {
@@ -69,4 +70,28 @@ body {
 
 .addedDiv:hover {
     color: #f0b859;
+}
+
+#pp {
+    min-height: 20rem;
+    margin: 5px 30px;
+    
+    border: 1px solid black;
+    padding: 10px;
+}
+
+footer {
+    min-height: 10rem;
+    position: relative;
+}
+
+#footer {
+    position: absolute;
+    bottom:0px;
+    background-color: #333333;
+    color:#cccccc;
+    font-family: 'Nanum Gothic';
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 100%;
 }

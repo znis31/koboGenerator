@@ -51,6 +51,14 @@ inputBtn.onclick = function(){
     }
 };
 
+numBox.addEventListener('click', resetBoxText);
+rateBox.addEventListener('click', resetBoxText);
+lengthBox.addEventListener('click', resetBoxText);
+
+function resetBoxText() {
+    this.innerText = '';
+};
+
 //난수 생성
 function getRand(min, max) {
     return Math.round(Math.random() * (max - min) + min);
